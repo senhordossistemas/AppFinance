@@ -1,6 +1,6 @@
 <!-- Use this file to provide workspace-specific custom instructions to Copilot. For more details, visit https://code.visualstudio.com/docs/copilot/copilot-customization#_use-a-githubcopilotinstructionsmd-file -->
 
-# AppFinance - Aplicativo de Controle de Finanças
+# ShareWallet - Carteira Compartilhada
 
 Este é um aplicativo React Native desenvolvido com Expo para controle de finanças pessoais com a funcionalidade única de atribuir transações a diferentes pessoas.
 

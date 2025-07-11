@@ -64,8 +64,8 @@ export function HomeScreen({ navigation }: HomeScreenProps) {
       >
         {/* Header */}
         <View style={styles.header}>
-          <Text style={styles.headerTitle}>AppFinance</Text>
-          <Text style={styles.headerSubtitle}>Controle suas finanças</Text>
+          <Text style={styles.headerTitle}>ShareWallet</Text>
+          <Text style={styles.headerSubtitle}>Sua carteira compartilhada</Text>
         </View>
 
         {/* Saldo Total */}

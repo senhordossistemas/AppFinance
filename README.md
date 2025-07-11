@@ -1,14 +1,12 @@
-# 💰 AppFinance - Controle de Finanças Pessoais
+# 💰 ShareWallet - Carteira Compartilhada
 
-Um aplicativo móvel desenvolvido em React Native para controle de finanças pessoais com a **funcionalidade única** de atribuir transações a diferentes pessoas, perfeito para famílias e grupos que compartilham despesas.
+Um aplicativo React Native inovador para controle de finanças pessoais com a funcionalidade única de **atribuir transações a diferentes pessoas**, mesmo quando você usa seu próprio cartão ou conta.
 
-## 🌟 Funcionalidades Principais
+## � Funcionalidade Principal Diferencial
 
-### ✨ **Funcionalidade Diferencial**
+**Problema Resolvido:** "Comprei algo para minha esposa/filho/amigo usando meu cartão, mas quero registrar que a despesa é dele, não minha."
 
-- **Atribuição de Despesas a Pessoas**: Especifique a quem pertence cada despesa, mesmo quando paga com seu cartão
-- **Controle de "Pago por"**: Distingua entre quem é responsável pela despesa e quem efetivamente pagou
-- **Relatórios por Pessoa**: Visualize gastos individuais e percentuais por pessoa
+**Solução ShareWallet:** Permite vincular qualquer transação feita com seus cartões/contas a qualquer pessoa cadastrada, mantendo o controle real de gastos por pessoa.
 
 ### 📱 Funcionalidades Gerais
 

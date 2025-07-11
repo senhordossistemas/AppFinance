@@ -7,7 +7,7 @@ class DatabaseService {
   async initDatabase() {
     if (this.db) return;
     
-    this.db = await SQLite.openDatabaseAsync('appfinance.db');
+    this.db = await SQLite.openDatabaseAsync('sharewallet.db');
     
     try {
       // Tabela de pessoas

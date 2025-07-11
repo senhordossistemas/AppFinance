@@ -7,10 +7,11 @@ import {
   TouchableOpacity,
   TextInput,
   Alert,
+  ScrollView,
 } from 'react-native';
-import { Picker } from '@react-native-picker/picker';
 import { useApp } from '../contexts/AppContext';
 import { AccountFormData } from '../types';
+import { CustomSelect } from '../components/CustomSelect';
 
 interface AddAccountScreenProps {
   navigation: any;
@@ -78,7 +79,8 @@ export function AddAccountScreen({ navigation }: AddAccountScreenProps) {
         <Text style={styles.title}>Nova Conta</Text>
       </View>
 
-      <View style={styles.content}>
+      <ScrollView style={styles.scrollContainer} showsVerticalScrollIndicator={false}>
+        <View style={styles.content}>
         {/* Nome da Conta */}
         <View style={styles.section}>
           <Text style={styles.label}>Nome da Conta *</Text>
@@ -93,21 +95,15 @@ export function AddAccountScreen({ navigation }: AddAccountScreenProps) {
         {/* Tipo de Conta */}
         <View style={styles.section}>
           <Text style={styles.label}>Tipo de Conta *</Text>
-          <View style={styles.pickerContainer}>
-            <Picker
-              selectedValue={formData.type}
-              onValueChange={(value) => setFormData(prev => ({ ...prev, type: value as any }))}
-              style={styles.picker}
-            >
-              {accountTypes.map(type => (
-                <Picker.Item
-                  key={type.value}
-                  label={type.label}
-                  value={type.value}
-                />
-              ))}
-            </Picker>
-          </View>
+          <CustomSelect
+            selectedValue={formData.type}
+            onValueChange={(value) => setFormData(prev => ({ ...prev, type: value as any }))}
+            placeholder="Selecione o tipo de conta"
+            items={accountTypes.map(type => ({
+              label: type.label,
+              value: type.value
+            }))}
+          />
         </View>
 
         {/* Nome do Banco */}
@@ -158,7 +154,8 @@ export function AddAccountScreen({ navigation }: AddAccountScreenProps) {
             {isLoading ? 'Salvando...' : 'Adicionar Conta'}
           </Text>
         </TouchableOpacity>
-      </View>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -173,6 +170,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 16,
     paddingTop: 8,
+    backgroundColor: '#FFFFFF',
+    borderBottomWidth: 1,
+    borderBottomColor: '#E2E8F0',
+  },
+  scrollContainer: {
+    flex: 1,
   },
   backButton: {
     fontSize: 16,
@@ -185,8 +188,8 @@ const styles = StyleSheet.create({
     color: '#2D3748',
   },
   content: {
-    flex: 1,
     padding: 16,
+    paddingBottom: 32,
   },
   section: {
     backgroundColor: '#FFFFFF',
@@ -222,15 +225,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#2D3748',
   },
-  pickerContainer: {
-    borderWidth: 1,
-    borderColor: '#E2E8F0',
-    borderRadius: 8,
-    overflow: 'hidden',
-  },
-  picker: {
-    height: 50,
-  },
   infoCard: {
     backgroundColor: '#F0FFF4',
     padding: 16,
@@ -263,7 +257,8 @@ const styles = StyleSheet.create({
     padding: 16,
     borderRadius: 12,
     alignItems: 'center',
-    marginTop: 'auto',
+    marginTop: 24,
+    marginBottom: 16,
   },
   saveButtonDisabled: {
     backgroundColor: '#A0AEC0',

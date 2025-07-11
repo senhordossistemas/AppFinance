@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   TextInput,
   Alert,
+  ScrollView,
 } from 'react-native';
 import { useApp } from '../contexts/AppContext';
 import { PersonFormData } from '../types';
@@ -59,7 +60,8 @@ export function AddPersonScreen({ navigation }: AddPersonScreenProps) {
         <Text style={styles.title}>Nova Pessoa</Text>
       </View>
 
-      <View style={styles.content}>
+      <ScrollView style={styles.scrollContainer} showsVerticalScrollIndicator={false}>
+        <View style={styles.content}>
         {/* Nome */}
         <View style={styles.section}>
           <Text style={styles.label}>Nome *</Text>
@@ -106,7 +108,8 @@ export function AddPersonScreen({ navigation }: AddPersonScreenProps) {
             {isLoading ? 'Salvando...' : 'Adicionar Pessoa'}
           </Text>
         </TouchableOpacity>
-      </View>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -121,6 +124,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 16,
     paddingTop: 8,
+    backgroundColor: '#FFFFFF',
+    borderBottomWidth: 1,
+    borderBottomColor: '#E2E8F0',
+  },
+  scrollContainer: {
+    flex: 1,
   },
   backButton: {
     fontSize: 16,
@@ -133,8 +142,8 @@ const styles = StyleSheet.create({
     color: '#2D3748',
   },
   content: {
-    flex: 1,
     padding: 16,
+    paddingBottom: 32,
   },
   section: {
     backgroundColor: '#FFFFFF',
@@ -196,7 +205,8 @@ const styles = StyleSheet.create({
     padding: 16,
     borderRadius: 12,
     alignItems: 'center',
-    marginTop: 'auto',
+    marginTop: 24,
+    marginBottom: 16,
   },
   saveButtonDisabled: {
     backgroundColor: '#A0AEC0',
